@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Im Sorry</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Pacifico&display=swap");
+    .button-33 {
+      background-color: #c2fbd7;
+      border-radius: 100px;
+      box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+        rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+        rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+        rgba(44, 187, 99, 0.15) 0 16px 32px;
+      color: green;
+      cursor: pointer;
+      display: inline-block;
+      font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto,
+        sans-serif;
+      padding: 7px 20px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 250ms;
+      border: 0;
+      font-size: 16px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    body {
+      height: 800px;
+      background-image: url(https://img.freepik.com/premium-vector/seamless-pattern-with-cute-cat-and-hearts-excellent-design-for-packaging-wrapping-paper-textile_562639-178.jpg);
+    }
+    .button-33:hover {
+      box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+        rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+        rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+        rgba(44, 187, 99, 0.25) 0 16px 32px;
+      transform: scale(1.05) rotate(-1deg);
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .text1,
+    .button-33 {
+      font-family: "Pacifico";
+    }
+
+    .text1 {
+      background-color: #c2fbd7;
+    }
+
+    .slider {
+      text-align: center;
+    }
+
+    .mySlides {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+  <body>
+    <p class="text1">Внизу вы можете полистать фотки с целовашками 😘💗</p>
+    <div class="slider">
+      <img class="mySlides" width="20%" src="img/1.jpg" />
+      <img class="mySlides" width="20%" src="img/2.jpg" />
+      <img class="mySlides" width="20%" src="img/3.jpg" />
+      <img class="mySlides" width="20%" src="img/4.jpg" />
+      <img class="mySlides" width="20%" src="img/5.jpg" />
+
+      <button class="w3-button w3-display-left" onclick="plusDivs(-1)">
+        &#10094;
+      </button>
+      <button class="w3-button w3-display-right" onclick="plusDivs(+1)">
+        &#10095;
+      </button>
+    </div>
+    <p class="text1">Прости меня, жаныым ❤️</p>
+    <p>
+      <button
+        class="button-33"
+        role="button"
+        onmouseDown="alert('Ееееее ❤️❤️❤️ А теперь нажми на OK, чтобы увидеть самую красивую, милую, умную, заботливую, очаровательную девушку на всей планете! 😍😍😍');parent.location='https://www.instagram.com/assel_aimurzinova/'"
+        value="Хорошооо 🥰"
+      >
+        Хорошооо 🥰
+      </button>
+      <span
+        id="button1"
+        style="position: relative; z-index: 10"
+        onmouseOver="moveIt()"
+        onfocus="moveIt();this.blur()"
+      >
+        <button
+          class="button-33"
+          role="button"
+          onmouseDown="moveIt()"
+          onmouseover="moveIt()"
+          onfocus="moveIt();this.blur()"
+        >
+          Нет 🙄
+        </button>
+      </span>
+    </p>
+
+    <script>
+      function getObj(objID) {
+        if (document.getElementById) {
+          return document.getElementById(objID);
+        } else if (document.all) {
+          return document.all[objID];
+        } else if (document.layers) {
+          return document.layers[objID];
+        }
+      }
+      var ie4 = document.all;
+      var ns6 = document.getElementById && !document.all;
+      cobj = getObj("button1");
+
+      function moveIt() {
+        y = Math.floor(Math.random() * 251);
+        x = Math.floor(Math.random() * 351);
+        if (ie4) {
+          cobj.style.top = y;
+          cobj.style.left = x;
+        } else if (ns6) {
+          cobj.style.top = y + "px";
+          cobj.style.left = x + "px";
+        }
+      }
+
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs((slideIndex += n));
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+      }
+    </script>
+  </body>
+</html>
